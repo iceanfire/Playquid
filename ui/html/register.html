@@ -1,0 +1,97 @@
+{% extends "include/base.html" %}
+
+{% block pageTitle %}
+	Signup for Playquid
+{% endblock pageTitle %}
+
+{% block title %}
+	You're just 30 seconds away from making new friends at work!
+{% endblock title %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="ui/css/register.css" />
+	<script type="text/javascript" src="/ui/js/register.js"></script>
+{% endblock head %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="ui/css/register.css" />
+
+  <h2 class="error"></h2>
+
+  <form action="/signup" method="post">
+
+      <h4>First, we'll need some basic info</h4>
+      <span id="basicInfo" class="signupInput">
+          <div>
+              <label for="firstname">
+                  First Name:
+               </label>
+              <input id="firstName" type="text" name="firstName" value=""/>
+          </div>
+          <div>
+              <label for="lastname">
+                  Last Name:
+               </label>
+              <input id="lastName" type="text" name="lastName" value=""/>
+          </div>
+          <div>
+              <label for="workemail">
+                  Work Email:
+              </label>
+              <input id="email" type="text" name="email" value="" />
+          </div>
+
+          <div>
+              <label for="gender">
+                  Gender:
+              </label>
+			  <select name='gender' id='gender'>
+				<option value='F'>Female</option>
+				<option value='M'>Male</option>
+			  </select>
+          </div>
+          <div>
+              <label for="zip">
+                  Zip Code:
+              </label>
+              <input id="zipCode" type="text" name="zipCode" value="" />
+          </div>
+      </span>
+
+      <h4>Second, just pick a password.</h4>
+      <span class="signupInput">
+        <div>
+            <label for="password">
+                Password:
+            </label>
+            <input type="password" name="password" value=""/>
+        </div>
+        <div>
+            <label for="password2">
+                Confirm:
+            </label>
+            <input type="password" name="password2" value=""/></div>
+      </span>
+	<h4>And finally, just tell us your timezone</h4>
+      <span class="signupInput">
+        <div>
+            <label for="timezone">
+                Timezone:
+            </label>
+            
+			<select name="timezone" id="timezone">
+			    <option value="US/Pacific">US/Pacific</option>
+			    <option value="US/Mountain">US/Mountain</option>
+			    <option value="US/Central" selected="selected">US/Central</option>
+			    <option value="US/Eastern">US/Eastern</option>
+
+
+			</select>
+		</div>
+      </span>
+
+      <div><input type="submit" name="submit" value="Sign me up--I'm ready to play!" id="registerButton" /></div>
+
+  </form>
+{% endblock content %}

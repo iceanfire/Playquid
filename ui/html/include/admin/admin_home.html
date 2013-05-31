@@ -1,0 +1,56 @@
+{% extends "AdminBase.html" %}
+
+{% block pageTitle %}
+	Admin Panel
+{% endblock pageTitle %}
+{% block head %}
+<style type="text/css">
+.contact {
+font-size: 24px;
+font-family: "lucida grande","verdana", san-serif;
+color: black;
+font-weight: bold;
+margin: 10px auto 10px auto;
+line-height: 33px;
+width: 842px !important;
+color: #333333;
+}
+table{
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+}
+th{
+	font-weight:bold;
+}
+td{	
+	padding: 10px;
+	border: 1px solid black;}
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+		<div class="header">
+			<h1>Admin Panel</h1>
+		</div>
+		<table>
+		<tr>
+			<th>Name</th>
+			<th>Domain</th>
+			<th>Time Added</th>
+		</tr>
+			
+		{% for client in ClientList %}
+		<tr>
+			<td>{{client.name}}</td>
+			<td>{{client.emailDomains}}</td>
+			<td>{{client.date}}</td>
+			
+			
+		</tr>
+		{% endfor %}
+		</table>
+
+{% endblock content %}

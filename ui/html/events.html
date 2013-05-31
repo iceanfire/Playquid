@@ -1,0 +1,263 @@
+{% extends "include/base.html" %}
+
+{% block pageTitle %}
+	Events Listing
+{% endblock pageTitle %}
+
+{% block title %}
+	Events Listing
+{% endblock title %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="ui/css/event.css" />
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+  
+
+
+  <style type='text/css'>
+        .eventsNew{
+            margin-bottom: 10px;
+            margin-top:10px;
+            margin-left:6px;
+
+        }
+        .eventTitle{
+        font-weight:bold;
+            color: #3C5C25;
+
+            line-height: 23px;
+            font-family: Helvetica, Verdana, Arial, sans-serif;
+            font-size: 14px;
+            padding-left: 2px;
+
+        }
+
+
+        .eventDescription{
+            padding-left: 4px;
+            padding-top: 2px;
+            font-size: 12px;
+            line-height: 16px;
+            border-left: 3px solid #C3D3A9;
+            margin-left: 2px;
+
+        }
+
+        .eventActions {
+
+            background-imagee: url('/img/sporticon/pattern.jpg');
+            background-colore: #ECFCD2;
+            height: 35px;
+            vertical-align:middle;
+            padding-left: 10px;
+            text-align:left;
+            margin-top: 5px;
+            padding-left: 66px;
+            opacity: .8;
+		}
+
+        .eventActions .toActivate{
+            color: #395925;
+            font-family:Verdana;
+            font-size: 12px;
+
+            padding-right: 95px;
+
+        }
+
+        .eventActions button{
+            background-color: #81B130;
+            color: white;
+            font-weight: bold;
+            border: 2px solid #75A22B;
+            font-size: 12px;
+            padding: 5px 4px 5px 4px;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            width: 115px;
+            margin-top: 3px;
+            margin-right: 5px;
+
+        }
+
+        .signedup.eventsNew.eventActions.checkOut button:hover {
+            border-color: #0E9641;
+            cursor:pointer;
+            background-color: #79A72E;
+
+        }
+
+        .titleText{
+            vertical-align: 8px;
+            background-color: #F9FDEB;
+            padding: 4px 10px 5px 6px;
+            color: #3C5C25;
+            margin-left: -4px;
+            line-height: 23px;
+            font-family: Helvetica, Verdana, Arial, sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .miniActions{
+            font-family:verdana;
+            font-size: 11px;
+            color: #395925;
+            padding: 4px 5px 5px 7px;
+            background-color: #FFFECB;
+            font-weight:bold;
+            text-decoration:none;
+
+        }
+
+        .activate{
+           padding: 9px 0px 9px 0px;
+           margin-left: 66px;
+
+        }
+
+        hr{
+            opacity:.15;
+        }
+
+
+        td{
+            vertical-align: top;
+        }
+
+		#error{
+			padding-top:20px;
+			font-size: 16px;
+			font-weight:bold;
+		}
+
+        <!--[if IE 6]>
+
+        h5 img { behavior: url("../css/ieFix/iepngfix.htc") }
+
+        .logo img { behavior: url("../css/ieFix/iepngfix.htc") }
+
+        #nav li a img{
+             behavior: url("../css/ieFix/iepngfix.htc")
+        }
+
+        <![endif]-->
+
+
+
+
+
+
+    </style>
+{% endblock head %}
+{% block content %}
+<script type="text/javascript">
+OfficeCenter = "{{userInfo.officeLatLong}}"
+MarkerLocations = [{% for event in EventsList %} {"latlong":"{{event.latlong}}","address":"{{event.address}}","key":"{{event.key.id()}}"},{%endfor%}]
+</script>
+<div class="clearfix">
+    <div  id="eventFeed">
+	<ul>
+		{% for year, year_group in EventsList|groupby('date.year') %}
+			{% for month, list in year_group|groupby('date.month') %}
+				<li class='month'>
+				<h3>{{ month }} {{ year }}</h3>
+				<ul>
+				{% for event in list %}
+				    {% if userInfo.user_id in event.participants %}
+					<li class="event signedup" data-eid="{{event.key.id()}}" data-lid="0">	
+					{% else %}
+					<li class="event notsignedup" data-eid="{{event.key.id()}}" data-lid="0">		
+					{% endif %}
+						<div class="eventsNew" style="background-color: white;">
+							<table>
+								<tr>
+									<td>
+										<div class="eventTimeWrapper clearfix ">
+											<div class="eventDay">{{event.date.day}}</div>
+										    <div class="eventTime">{{event.date.hour}}:{{event.date.minute}}</div>
+										 </div>
+									</td>
+									<td>
+										<h5>
+										    <span class="titleText">
+										    	{{event.title}}
+										    </span>
+										 </h5>
+										<div class="eventDescription">
+											<b>{{userInfo.fname}} {{userInfo.lname}} :</b> 
+											{{event.details}}
+										</div>
+									</td>
+								</tr>
+							</table>
+							<div class="eventActions" style="opacity: 0.8;">
+								<span class="">
+							    	<span class="comment">
+							        	<button style="width:75px;">Comment</button>
+							        </span>
+							        <button>Invite Friends</button>
+							        <span class="checkOut">
+										 {% if userInfo.user_id in event.participants %}
+										 <button>Signed Up!</button>	
+										 {% else %}
+										 <button>Check In!</button>		
+										 {% endif %}
+									</span>
+							    </span>
+							</div>
+							<div class="activate">
+								<a href="#" class="miniActions">0 Players have Checked-In. 4 needed to activate event.</a>
+							</div>
+						</div>
+					</li>
+					<hr>
+
+				{% endfor %}
+				</ul>
+			{% endfor %}
+		{% else %}
+			<div id="error">Oh no! There are no upcoming events, <a href="/suggestEvent">suggest one</a> :)</div>
+		{% endfor %}
+    </div>
+
+
+    <div id="mapWrapper">
+        <div id="event_map"></div>
+    </div>
+</div>
+
+{% endblock content %}
+{% block footer %}
+
+<script type='text/javascript'>
+
+//var mapOptions = {
+//  center: new google.maps.LatLng({{userInfo.officeLatLong}}),
+//  zoom: 11,
+// mapTypeId: google.maps.MapTypeId.ROADMAP
+//};
+//map = new google.maps.Map(document.getElementById("event_map"), mapOptions);
+
+</script>
+<script type="text/javascript" src="/ui/js/vendor/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="/ui/js/listevents.js"></script>
+
+ <script type='text/javascript'>
+
+        $('.eventsNew').live('mouseleave',function(){
+
+            $(this).css('background-color','white')
+            //$(this).find('.activate').css('display','block');
+            $(this).find('.eventActions').css('opacity','.8');
+
+        })
+
+        $('.eventsNew').live('mouseenter',function(){
+             $(this).css('background-color','#F9FDEB')
+             //$(this).find('.activate').css('display','none');
+             $(this).find('.eventActions').css('opacity','1');
+        })
+
+</script>
+{% endblock %}

@@ -1,0 +1,96 @@
+#userContent{
+    background-color: #F4FEEF;
+}
+.suggestEvent{
+    background-color:#F4FEEF;
+    padding-left: 8px;
+    padding-bottom: 20px;
+    float:left;
+}
+
+.suggestEvent .directions{
+    font-weight: bold;
+    width: 500px;
+    line-height: 15px;
+    padding-bottom: 6px;
+    background-color: #EDF8E1;
+    padding-left: 9px;
+    padding-top: 6px;
+    margin-bottom: 9px;
+    font-family: verdana;
+    color: #444444;
+    border: 2px solid #DAE5D0;
+
+
+}
+
+.suggestEvent h3{
+    margin-top:0px !important;
+    padding-top:15px;
+    padding-bottom: 8px;
+}
+
+.suggestEvent form{
+
+    padding-left:6px;
+
+
+}
+
+.suggestEvent form div{
+    padding:5px 4px 5px 5px ;
+
+
+}
+
+.suggestEvent form div label{
+    padding-right: 5px;
+    width: 75px;
+    float:left;
+    font-size:11px;
+    line-height: 30px;
+    clear:both;
+}
+
+.suggestEvent form div input,textarea{
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3px;
+}
+
+#createNewLoc{
+    background-color:#E5F8D0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 510px;
+    margin: 12px 0px 0px -4px;
+    padding-top: 2px !important;
+}
+
+#locationAddress{
+    width: 250px;
+    font-size: 12px !important;
+}
+
+#createNewLoc #locationCity{
+    width:130px;
+    margin-left: 10px;
+}
+
+.suggestEvent form div textarea{
+    width:400px;
+    height:100px;
+}
+
+#locationMap{
+    float:right;
+    background-color: black;
+    height: 516px;
+    width: 434px;
+}
+
+div.ui-datepicker{
+    font-size: 13px;
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+      <title>Playquid: All of your organization's events, in one place.</title>
+	  <link rel="stylesheet" type="text/css" href="ui/css/reset.css" />
+
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	  <script type="text/javascript" src="/ui/js/intro.js"></script>
+
+      <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-26286514-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+      </script>
+	<script type="text/javascript" src="http://use.typekit.com/eip8ssy.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	  <style type="text/css">
+	  html{
+		background: #F8FCF7 url(/ui/img/intro/background4.jpg);
+	  }
+	  body{
+		text-align:center;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+		background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+		background-image: -o-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+	}
+	#nav{
+		width: 950px;
+		text-align: left;
+		margin: 0px auto 0px auto;
+		padding: 20px 0px 0px 12px;
+	}
+	#login{
+		background-color: #2EA60B;
+		color: white;
+		font-weight: bold;
+		border: 2px solid #A0D051;
+		border-style: none;
+		font-size: 13px;
+		font-family: helvetica;
+		padding: 8px 5px 8px 17px;
+		opacity: 1;
+		width: 56px;
+		float: right;
+		margin: 12px 10px 0px 0px;
+		
+		
+		-moz-border-radius: 14px;
+		-webkit-border-radius: 14px;
+		border-radius: 14px;
+		-webkit-box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.05);
+		-moz-box-shadow: 0px 1px 0 rgba(0,0,0,0.05);
+		box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.05);
+		-webkit-transition: -webkit-box-shadow 0.1s ease-in-out;
+		-moz-transition: -moz-box-shadow 0.1s ease;
+		
+	}
+	#login:hover{
+		-webkit-box-shadow:0px 1px 0 rgba(0,0,0,0.05),0 0 4px #5695db;
+		-moz-box-shadow:0px 1px 0 rgba(0,0,0,0.05),0 0 4px #5695db;
+		box-shadow:0px 1px 0 rgba(0,0,0,0.05),0 0 4px #5695db;
+		cursor: pointer;
+		opacity:1;
+	}
+	  #container{
+	  	width: 950px;
+	    margin: 25px auto 20px auto;
+		padding: 42px 0px 25px 0px;
+		background-color: white;
+		border: 1px solid #EFF2F2;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+
+		-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+		-moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+		
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.1),0 2px 6px rgba(0, 0, 0, 0.31);
+		
+		
+	   }
+	  #topLogo{
+		margin: auto;
+		padding: 0px 0px 35px 0px;
+		opacity: .9;
+	 }
+	  h1{
+		padding: 0px 0px 0px 0px;
+		font-size: 42px;
+		font-weight: 500;
+	 }
+	  h2{
+		font-family: "verdana";
+		font-size:16px;
+		font-weight: normal;
+		padding: 12px 0px 0px 0px;
+		}
+	  #video{
+		margin: 35px auto 0px auto;
+		border: none;
+		width: 100%;
+		height: 338px;
+		background-color: black;
+		background-image: url("/ui/img/intro/banner.jpg");
+		-moz-border-radius: 8px;
+		border-radius: 0px;
+		opacity: 1;
+
+		}
+		
+		#video img{
+			opacity: .9;
+			padding-top: 68px;
+			padding-left: 5px;
+		}
+		
+		#video img:hover{
+			opacity: 1;
+			cursor: pointer;
+		}
+		.divider{
+			padding: 30px 0px 25px 0px;
+		}
+		strong{
+			font-weight:bold;
+		}
+		.headingGroup{
+			border-left: 10px solid #2EA60B;
+			text-align:left;
+			padding: 0px 0px 0px 10px;
+			margin: 0px 0px 25px 30px;
+			width: 830px;
+			
+		}
+		
+		.headingGroup h1{
+			font-weight: 600;	
+			font-size: 24px;	
+			color: #333333;
+				
+		}
+		.headingGroup h2{
+			font-weight:normal;
+			font-size: 17px;
+			padding: 4px 0px 2px 0px;
+			line-height: 21px;
+			color: #666666;
+			
+		}
+		
+		.testimonial{
+			padding-left: 100px;
+			width: 100%;
+			overflow: auto;
+		}
+		
+		.testimonial .quote{
+			float:left;
+			font-size: 17px;
+			text-align: left;
+			line-height: 21px;
+			width: 500px;
+			padding: 8px 0px 0px 60px;
+		}
+		
+		.testimonial .picture{
+			float:left;
+		}
+		#footer{
+			font-family:verdana;
+			color: #333333;
+			text-align: middle;
+			width: 100%;
+			font-size: 10px;
+			padding: 10px 0px 30px 0px;
+		}
+      </style>
+  </head>
+  <body>
+	<div id="nav">
+		<img src="/ui/img/logo-full.png">
+		<div id="login">
+			Our Team
+		</div>
+		<div id="login">
+			Sign In
+		</div>
+	</div>
+	<div id="loginBox" style="display: block;">
+		<h2 class="error"></h2>
+		<form action="/login/" method="post">
+			<div>
+				Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input class="email" type="text" name="email" value="">
+				<br>
+				Password: <input class="password" type="password" name="password" value="">
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" class="submitLogin" value="Login">
+			</div>
+		</form>
+	</div>
+	<div id="container">	
+		<div class="header">
+			<h1>All of your organization’s events, in one place</h1>
+			<h2>With <strong>Playquid</strong>, it's easy to plan & discover new events within your organization</h2>
+		</div>
+		
+		<div id="video">
+			<img src="/ui/img/intro/play.png" style="margin:auto auto auto auto;">
+		</div>
+
+		<div class="divider">
+			<img src="/ui/img/intro/divider.jpg">
+		</div>
+		<div class="headingGroup">
+			<h1>You have talented employees, Playquid helps you retain them.</h1>
+			<h2>Employees quit when they feel lost & disconnected. Today's workforce is jumping from job to job in search of 
+				meaning. How do top companies in today's economy retain their talent? By creating & maintaining a <b>connected</b> culture.
+			</h2>
+		</div>
+		
+		<div class="testimonial">
+			<div class="picture">
+				<img src="/ui/img/intro/anon.jpg">
+				
+			</div>
+			<div class="quote">
+				“As a consultant at a Big Four accounting firms, I was traveling all the time. It was great! But, 
+				I never had the chance to meet my co-workers.
+				I  would’ve loved it if I had the chance to play a game of basketball, or soccer... 
+				but <b>it was impossible to find people interested in the same activities as me</b>. I just quit and joined a smaller company where it feels more like home.”
+				<br /><br /><strong style='color: #333333'>James (IT Consultant at a Big Four Accounting Firm)</strong>
+			</div>
+		</div>
+		<br /><br />
+		<div class="testimonial">
+			<div class="picture">
+				<img src="/ui/img/intro/tony.jpg">
+				
+			</div>
+			<div class="quote">
+				“Our goal at Zappos is to inspire -- not motivate -- employees to treat each other like family. 
+				For example, <b>most Zappos employees when they leave the office leave to hang out with other Zappos employees.</b> 
+				That's behavior you can't force upon employees. They actually have to want to do it.”
+				<br /><br /><strong style='color: #333333'>Tony Hsieh (CEO of Zappos - 91% Retention Rate)</strong>
+			</div>
+		</div>
+
+		<div class="divider">
+			<img src="/ui/img/intro/divider.jpg">
+		</div>
+		<div class="headingGroup">
+			<h1>From Basketball to Volleyball to Lunch, it's easy to suggest events</h1>
+			<h2>At Playquid, we’ve studied every step of the event organization process and made it painless. 
+				Since it’s so easy to create events, more people do it and employee interaction skyrockets. Here’s a sneak-peak:
+			</h2>
+		</div>
+		<img src="/ui/img/intro/demo-screenshot.jpg" style="padding-right: 45px;">
+		<div class="divider">
+			<img src="/ui/img/intro/divider.jpg">
+		</div>
+		<div class="headingGroup">
+			<h1>Track your culture with weekly progress reports.</h1>
+			<h2>Feedback’s important. You’ll get a monthly anonymized report with key metrics. 
+				Semi-annually, we’ll examine the activity level in your organization and give you tips on how to increase employee engagement.
+			</h2>
+		</div>
+		<img src="/ui/img/intro/demo-report.jpg" style="padding-right: 34px;">
+		<div class="divider">
+			<img src="/ui/img/intro/divider.jpg">
+		</div>
+		<div class="headingGroup">
+			<h1>We’re dedicated to increasing interaction between employees.</h1>
+			<h2>Playquid is laser focused on increasing face-to-face interaction between your employees.
+				Why is interaction important? Because <strong>people who have fun together do great work together.</strong> Check out <a href="http://www.facebook.com/playquid">our Facebook page</a> for more reasons why having an interactive culture matters.
+			</h2>
+		</div>
+		<img src="/ui/img/intro/research.gif">
+	</div>
+	<div id="footer">
+		<strong>Playquid</strong> - people who have fun together, do great work together.
+	</div>
+  </body>
+</html>

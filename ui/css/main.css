@@ -1,0 +1,210 @@
+/********
+http://www.webtoolkit.info/css-clearfix.html
+**************/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+/******
+END CLEAR FIX
+*******/
+
+
+
+
+
+body {
+    font-family: Verdana, sans-serif;
+	background-image: url("../img/intro/introBack.jpg");
+    width: 976px;
+    margin: auto;
+    position: relative;
+    background-repeat:repeat-x;
+    background-color:#FFFFFF;
+
+}
+
+#header{
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 18px;
+    margin-left: -13px;
+
+}
+
+
+#header .logo img{
+    padding-top:14px;
+    float:left;
+}
+
+
+#content{
+	margin-top: 15px;
+    float:left;
+
+    /* -moz-box-shadow: 2px 2px 13px 4px #F0F2EC;
+	-webkit-box-shadow: 2px 2px 13px 4px #F0F2EC;
+	box-shadow: 0px 0px    8px 2px #CCD2BD;
+	ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#EDF8EB')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#EDF8EB'); */
+}
+
+#nav{
+	float:right;
+    padding:8px 0px 6px 8px;
+	-webkit-border-radius:14px;
+	-moz-border-radius: 14px;
+    margin-top:10px;
+    opacity: 1;
+}
+
+#nav li{
+	color:black;
+	display:inline;
+    cursor: pointer;
+}
+
+#nav li img{
+    cursor: pointer;
+}
+
+#nav li a {
+    color: white;
+    text-decoration:none;
+}
+
+#nav li a:hover {
+    text-decoration: underline;
+}
+
+#titleCorner{
+    position:absolute;
+    left: -11px;
+}
+
+h1{
+    background-color:#2EA60B;
+    
+	height: 42px;
+	font-size: 17px;
+    font-weight: bold;
+    color: white;
+	line-height: 2.1em;
+	padding-left: 2px;
+    padding-top: 5px;
+    width:984px;
+    z-index:3;
+
+    /*border-bottom:3px solid #B3DA70; #9ED04C*/
+	/* -webkit-border-top-right-radius:5px;
+	-webkit-border-top-left-radius:5px;
+	-moz-border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px; */
+}
+
+h2.error {
+    color: red;
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+
+#userContent{
+	font-size: 12px;
+	padding-left:0px;
+	padding-bottom: 20px;
+    background-color: white; /*#FCFCFC - old color */
+
+    -webkit-border-bottom-right-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+}
+
+h4 {
+    color: #38661A;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 6px;
+    width: 620px;
+    padding: 5px 4px 5px 10px;
+}
+
+h3 {
+    color: #38661A;
+    margin-bottom: 4px;
+    margin-top: 6px;
+    padding: 8px 4px 0px 0px;
+    font-size:18px;
+    font-weight: bold;
+}
+
+h5 {
+    font-size:13px;
+    font-weight:bold;
+    padding: 4px 4px 6px 0px;
+    color: green;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.defaultButton{
+    background-color: #81B130;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #75A22B;
+    font-size: 12px;
+    padding: 5px 4px 5px 4px;
+
+    margin-top: 2px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    cursor:pointer;
+}
+
+
+
+.welcomeMessage{
+    font-family: verdana;
+    font-size: 14px;
+    margin-left: 15px;
+    line-height: 18px;
+}
+
+#info_footer {
+    width: 200px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+#info_footer a {
+    color: #666666;
+    text-decoration: none;
+}
+#info_footer a:hover {
+    color: #004691;
+    text-decoration: underline;
+}
+#info_footer li {
+    float: left;
+    margin: 4px;
+}

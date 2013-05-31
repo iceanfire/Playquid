@@ -1,0 +1,45 @@
+{% extends "include/base.html" %}
+
+{% block pageTitle %}
+	Your Profile
+{% endblock pageTitle %}
+
+{% block title %}
+	Your Profile
+{% endblock title %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="ui/css/register.css" />
+	<script type="text/javascript" src="/ui/js/register.js"></script>
+{% endblock head %}
+
+{% block content %}
+<h2></h2>
+
+<form action="/update/profile" method="post">
+
+    <h4>Your Personal Information</h4>
+	{{userInfo}}
+    <div>First Name: <input type="text" name="firstname" value="{{userInfo.fname}}"/></div>
+    <div>Last Name: <input type="text" name="lastname" value="{{userInfo.lname}}"/></div>
+    <div>Work Email: <b>{{userInfo.auth_ids[0]}}</b>
+    <div>Gender: 
+	 <select name='gender' id='gender'>
+		<option value='F' {% if userInfo.gender == "F" %} selected="selected" {% endif %}>Female</option>
+		<option value='M' {% if userInfo.gender == "M" %} selected="selected" {% endif %} >Male</option>
+	  </select>
+	</div>
+    <div>Zip Code: <input type="text" name="zipcode" value="{{userInfo.zipcode}}" /></div>
+    <div>Timezone:
+	<select name='timezone' id='timezone'>
+		<option value='US/Central' {% if userInfo.timezone == "US/Central" %} selected="selected" {% endif %}>US/Central</option>
+		<option value='US/Pacific' {% if userInfo.timezone == "US/Pacific" %} selected="selected" {% endif %}>US/Pacific</option>
+		<option value='US/Eastern' {% if userInfo.timezone == "US/Eastern" %} selected="selected" {% endif %}>US/Eastern</option>
+	</select>
+	</div>
+
+    <div><input type="submit" name="submit" value="Update my Personal Information" class="defaultButton"/></div>
+    
+</form>
+
+{% endblock content %}

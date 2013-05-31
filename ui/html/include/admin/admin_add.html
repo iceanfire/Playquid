@@ -1,0 +1,61 @@
+{% extends "AdminBase.html" %}
+
+{% block pageTitle %}
+	Admin Panel
+{% endblock pageTitle %}
+{% block head %}
+<style type="text/css">
+.contact {
+font-size: 24px;
+font-family: "lucida grande","verdana", san-serif;
+color: black;
+font-weight: bold;
+margin: 10px auto 10px auto;
+line-height: 33px;
+width: 842px !important;
+color: #333333;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+		<div class="header">
+			<h1>Add Business</h1>
+		</div>
+		<form method="POST" action="/admin/add">
+			<div>
+	              <label>
+	                  Company Name:
+	               </label>
+	              <input id="companyName" type="text" name="companyName" value=""/>
+	         </div>
+			<div>
+	              <label>
+	                  Email Domain:
+	               </label>
+	              <input id="emailDomain" type="text" name="emailDomain" value="" placeholder="i.e. yahoo.com, yahoo.net"/>
+	        </div>
+			<div>
+	              <label>
+	                  Street Address:
+	               </label>
+	              <input id="streetAddress" type="text" name="streetAddress" value="" placeholder="i.e. 123 fake street"/>
+	        </div>
+			<div>
+	              <label>
+	                  City:
+	               </label>
+	              <input id="city" type="text" name="city" value="" placeholder="i.e. Houston"/>
+	        </div>
+			<div>
+	              <label>
+	                  State:
+	               </label>
+	              <input id="state" type="text" name="state" value="" placeholder="i.e. Texas"/>
+	        </div>
+			<div><input type="submit" name="submit" value="Add Client to Playquid" id="submit" /></div>
+		</form>
+		
+
+{% endblock content %}

@@ -1,0 +1,92 @@
+{% extends "include/homepage/HomeBase.html" %}
+
+{% block pageTitle %}
+	Research
+{% endblock pageTitle %}
+
+{% block head %}
+<style type="text/css">
+.left{
+	text-align: left;
+	padding-left: 25px;
+	padding-bottom: 1px;
+}
+
+#container{
+	padding: 25px 0px 25px 0px !important;
+}
+
+.name{
+	font-family: "myriad-pro",sans-serif;
+	font-size: 20px;
+}
+
+.headingGroup{
+	padding: 0px 0px 0px 5px !important;
+	margin: 5px 0px 25px 20px !important;
+	border: none !important;
+}
+
+.research{
+	text-align: left;
+	padding-left: 30px;
+	font-family: "myriad-pro", sans-serif;
+	padding-bottom: 20px;
+}
+
+.research .title{
+	font-weight:bold;
+	display:block;
+	line-height: 1.2em;
+	padding-bottom: 4px;
+	font-size: 18px;
+}
+
+.research .author{
+	font-family: verdana;
+	font-size: 14px;
+	display: block;
+	padding-bottom: 4px;
+	font-weight:bold;
+}
+
+.research .publisher{
+	font-size: 12px;
+}
+
+
+
+
+</style>
+{% endblock  head%}
+
+
+
+{% block content %}
+		<div class="left">
+			<h1>Research</h1>
+		</div>
+		
+		<div class="headingGroup">
+			<h2>
+				We believe that <b>people who have fun together, do great work together</b>. And so, with the help of our scientific advisor (James Fowler, author of the ground breaking best-seller "Connected"), we're laser focused on creating positive employee interactions that can help organizations flourish. Check out these research studies to learn more.
+			</h2>
+		</div>
+		<div class="research">
+			<span class="title"><a href="http://jhfowler.ucsd.edu/social_contagion_theory.pdf">Social Contagion Theory: Examining Dynamic Social Networks and Human Behavior.</a></span>
+			<span class="author">Nicholas A. Christakis, James H. Fowler</span>			
+		</div>
+		<div class="research">
+			<span class="title"><a href="http://jhfowler.ucsd.edu/estimating_peer_effects.pdf">Estimating Peer Effects on Health in Social Networks.</a></span>
+			<span class="author">James H. Fowler, Nicholas A. Christakis</span>			
+		</div>
+		
+		
+		
+		<br /><br />
+	
+
+
+
+
+{% endblock content %}

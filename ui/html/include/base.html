@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Playquid: {% block pageTitle %}{% endblock %}</title>
+	  <link rel="stylesheet" type="text/css" href="ui/css/reset.css" />	  
+      <link rel="stylesheet" type="text/css" href="ui/css/main.css" />
+
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	  <script type="text/javascript" src="/ui/js/vendor/jquery.min.js"></script>
+	  {% block head %}
+	  {% endblock head %}
+
+      <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="/css/ieOnly.css" />
+      <![endif]-->
+
+  </head>
+  <body>
+
+
+    <div id="header">
+            <a class="logo" href="#"><img src="/ui/img/logo.png" alt="Playquid.com" /></a>
+
+            <ul id="nav">
+                <li><a href="/events"><img title="View Events" alt="View Events" src="/ui/img/menu/eventFeed2.png" /></a></li>
+                <li><a href="#"><img title="My Calendar" alt="My Calendar" src="/ui/img/menu/Calendar2.png" /></a></li>
+                <li><a href="/suggestEvent"><img title="Suggest Events" alt="Suggest Event" src="/ui/img/menu/Brainstorm2.png" /></a></li>
+                <li><a href="/profile"><img title="My Profile" alt="My Profile" src="/ui/img/menu/Profile2.png" /></a></li>
+                <li><a href="/peaceout"><img title="Logout" alt="Logout" src="/ui/img/menu/Close2.png" /></a></li>
+            </ul>
+    </div>
+
+    <script>
+
+        $('#nav li a img').mouseenter(function(){
+            $(this).attr('src',$(this).attr('src').replace('2',''))
+        })
+        $('#nav li a img').mouseleave(function(){
+            $(this).attr('src',$(this).attr('src').replace('.png','2.png'))
+        })
+
+    </script>
+
+  <div id="content">
+      <span id="titleCorner"><img src="/ui/img/menu/Title_leftCorner.jpg"></span>
+      <h1>{% block title %}{% endblock title %}</h1>
+      <div id="userContent">
+	  {% block content %}{% endblock %}
+	  </div>
+   </div>
+   
+  <br /><br />
+
+  <div id="info_footer">
+      <ul class="clearfix">
+          <li><a href="">Privacy</a></li>
+          <li><a href="mailto:info@playquid.com">Contact Us</a></li>
+      </ul>
+  </div>
+
+ </body>
+{% block footer %}{% endblock %}
+</html>

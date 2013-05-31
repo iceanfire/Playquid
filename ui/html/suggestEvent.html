@@ -1,0 +1,380 @@
+{% extends "include/base.html" %}
+
+{% block pageTitle %}
+    Suggest Event
+{% endblock pageTitle %}
+
+{% block title %}
+	Suggest an Event!
+{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="ui/css/brainstorm.css" />
+
+<script type="text/javascript" src="/ui/js/vendor/timePicker.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<link rel="stylesheet" type="text/css" href="ui/css/vendor/timePicker.css" />
+
+
+
+<style type="text/css">
+.selectButton{
+	/*padding: 5px 10px 5px 10px;
+	margin: 5px;
+	background-color: #6FA803;
+	cursor: pointer;
+	color: white !important;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 2px solid #75A22B;
+	width: 178px !important;
+	text-align: center;*/
+	
+	background-color: #4F9420;
+	cursor: pointer;
+	color: white !important;
+	font-weight: bold;
+	border: 2px solid #75A22B;
+	font-size: 15px !important;
+	padding: 5px 4px 5px 4px;
+	margin-top: 2px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	text-align:center;
+	padding: 5px 10px 5px 10px !important
+}
+
+.datePicker{
+	width: 210px;
+	background-color: white;
+	background: url('/ui/css/vendor/calendar.png') white no-repeat 99%;
+}
+
+.Zebra_DatePicker_Icon{
+	left: 295px !important;
+}
+Zebra_DatePicker_Icon_Disabled {
+	left: 295px !important;
+}
+
+#continueToPart2{
+	background-color: #4F9420;
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	border: 2px solid #75A22B;
+	font-size: 17px;
+	padding: 5px 4px 5px 4px;
+	margin-top: 2px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	width: 100px;
+	text-align:center;
+}
+#part2{
+	display:none;
+}
+.addressConfirm{
+	display:none;
+}
+
+.cancel{
+	background-color: #9A1822 !important;
+	border: 2px solid #9A1822 !important;
+	
+}
+
+#placesResults{
+	display:none;
+}
+
+</style>
+{% endblock head %}
+
+{% block content %}
+
+<div id="form" class="clearfix">
+    <div class="suggestEvent">
+        <h3>What? Where? When?</h3>
+        
+        <form action="/suggestEvent" method="post">
+		<input type="hidden" value="" name="latlong" id="latlong">
+		<span id="part1">
+			<div class="directions">
+	            Remember, an event is only activated if the enough people check-in!<br /> Don't worry, we'll send you an email as soon as it's activated.
+	            <br />
+	        </div>
+            <div>
+                <label for="sportType">What?</label>
+				<input type="text" id="eventName" name="eventName" placeholder="i.e. Volleyball">
+            </div>
+            <div>
+                <label for="description">More Details</label>
+                <textarea id="description" name="description" placeholder="Tell us a little bit about what your suggestion and share some tips (i.e. Parking information)"></textarea>
+            </div>
+            <div>
+                <label for="date">When?</label>
+                <input type="text" id="date" name="startDateTime" class="datePicker" id="datePicker" /> at 
+				<select id="event-when-time" name="eventTime" style="display: inline-block;"><option value="7:00">7:00</option><option value="7:15">7:15</option><option value="7:30">7:30</option><option value="7:45">7:45</option><option value="8:00">8:00</option><option value="8:15">8:15</option><option value="8:30">8:30</option><option value="8:45">8:45</option><option value="9:00">9:00</option><option value="9:15">9:15</option><option value="9:30">9:30</option><option value="9:45">9:45</option><option value="10:00">10:00</option><option value="10:15">10:15</option><option value="10:30">10:30</option><option value="10:45">10:45</option><option value="11:00">11:00</option><option value="11:15">11:15</option><option value="11:30">11:30</option><option value="11:45">11:45</option><option value="0:00">12:00</option><option value="0:15">12:15</option><option value="0:30">12:30</option><option value="0:45">12:45</option><option value="1:00">1:00</option><option value="1:15">1:15</option><option value="1:30" selected>1:30</option><option value="1:45">1:45</option><option value="2:00">2:00</option><option value="2:15">2:15</option><option value="2:30">2:30</option><option value="2:45">2:45</option><option value="3:00">3:00</option><option value="3:15">3:15</option><option value="3:30">3:30</option><option value="3:45">3:45</option><option value="4:00">4:00</option><option value="4:15">4:15</option><option value="4:30">4:30</option><option value="4:45">4:45</option><option value="5:00">5:00</option><option value="5:15">5:15</option><option value="5:30">5:30</option><option value="5:45">5:45</option><option value="6:00">6:00</option><option value="6:15">6:15</option><option value="6:30">6:30</option><option value="6:45">6:45</option></select>
+
+				<select id="event-when-ampm" name="am_pm" style="display: inline-block;">
+					<option value="am">AM</option>
+					<option value="pm" selected>PM</option>
+				</select>
+            </div>
+
+            <div>
+                <label for="duration">How Long?</label>
+                <select id="duration" name="duration">
+					<option value='30'>Approximately Half an Hour</option>
+                    <option value='60'>Approximately an Hour</option>
+                    <option value='120'>Approximately 2 Hours</option>
+                    <option value='180'>Approximately 3 Hours</option>
+                    <option value='240'>Approximately 4 Hours</option>
+                    <option value='300'>Approximately 5 Hours</option>
+                </select>
+             </div>
+			<div>
+                <label for="minPlayers">At-least</label>
+                <select id="minPlayers" name="minPlayers">
+                    <option value='2'>2 People are needed</option>
+                    <option value='3'>3 People are needed</option>
+                    <option value='4' selected>4 People are needed</option>
+                    <option value='5'>5 People are needed</option>
+                    <option value='6'>6 People are needed</option>
+                    <option value='7'>7 People are needed</option>
+                    <option value='8'>8 People are needed</option>
+                    <option value='8'>9 People are needed</option>
+                    <option value='10'>10 People are needed</option>
+                </select>
+            </div>
+			<br />
+			<div id="continueToPart2">
+                Next
+            </div>
+		</span> <!--end of part 1 --<input id="suggestEventSubmit" type="" name="submit" value="Next"/>-->
+		<span id="part2">
+			<div class="directions">
+	            One last step! Please type in an address or the name of the location.
+	            <br />
+	        </div>
+
+                <div id="createNewLoc">
+                    <div>
+                        <label for="locationAddress">Address</label>
+                        <input id="locationAddress" name="locationAddress" type="text" placeholder="Street Address or Location Name">
+                        <!--<input id="locationCity" name="locationCity" type="text" placeholder="City, State" value="{{userInfo.officeCityState}}">!-->
+                    </div>
+						<input type="button" id="searchLocations" class="selectButton" value="Search For Location">
+						<input type="button" id="back1" class="selectButton cancel" value="Back to Event Details">
+                </div>
+				<br />
+				<div class="directions addressConfirm">
+		            We found your location! Take a look at the map on the right to confirm that it's the right place & press submit when you're ready!
+		            <br /><br />
+					<input id="suggestEventSubmit" type="submit" name="submit" value="Submit" class="selectButton"/>
+					<input id="back2" type="button" name="Go Back" value="Go Back" class="selectButton cancel"/>
+		        </div>
+				<div id="placesResults">
+				</div>
+            <br />
+		</span> <!--end of part 2 -->
+           
+        </form>
+    </div>
+    <div id='locationMap'>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+
+
+var mapOptions = {
+  center: new google.maps.LatLng({{userInfo.officeLatLong}}),
+  zoom: 11,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+
+
+map = new google.maps.Map(document.getElementById("locationMap"), mapOptions);
+
+geocoder = new google.maps.Geocoder();
+service = new google.maps.places.PlacesService(map);
+markersArray = [];
+lastOpenInfoWindow = null;
+
+//closes the info window if it is open on the map.
+google.maps.event.addListener(map, 'click', function() {
+       if(lastOpenInfoWindow){
+			lastOpenInfoWindow.close()	
+		}
+ });
+
+function searchLocations(address){
+	//Step 1 : Clear all markers, confirmations & overlays... also set the Center
+	clearOverlays()
+	$('.addressConfirm').css('display','none')
+	placesResults = []
+	placesHtml = "<table><tr><th></th><th>Name</th><th></th><th>Select</th></tr>"
+	map.setCenter(new google.maps.LatLng({{userInfo.officeLatLong}}));
+	map.setZoom(11);
+	
+	
+	//Step 2: Setup request for Google Places API
+	request = {
+		location: new google.maps.LatLng({{userInfo.officeLatLong}}),
+		radius: '500',
+		query: address
+	}
+	
+	//Step 3: Setup request for Geocode
+	geocoder.geocode( { 'address': address},searchGeocode)
+	//!!!!!!!!!geocoder.geocode( { 'latLng': address},searchGeocode) --do this later, but we may need to reverse geo-code some places...to get a viable address.
+	
+	///Step 4: Begin Search (Via Geocoding)
+	function searchGeocode(results, status) {
+	  if (status == google.maps.GeocoderStatus.OK) {
+		if(results[0].geometry.location_type=="ROOFTOP"){
+			map.setCenter(results[0].geometry.location);
+			var marker = new google.maps.Marker({
+			            map: map,
+			            position: results[0].geometry.location
+			});
+			markersArray.push(marker);
+			$('#createNewLoc').fadeOut()
+			$('.directions').fadeOut()
+			$('.addressConfirm').css('display','block')
+			latlong = results[0].geometry.location['Xa']+","+results[0].geometry.location['Ya']
+			$('#latlong').val(latlong)
+			
+		}
+		else{
+			//Geocoding has failed to get accurate results. Start Search via Places API
+			service.textSearch(request, searchPlaces);
+		}
+		
+	  }
+	}
+	
+	//Step 5: Search via Places API
+	function searchPlaces(results, status) {
+	  if (status == google.maps.places.PlacesServiceStatus.OK) {
+	    for (var i = 0; i < results.length; i++) {
+	      var place = results[i];
+	      createMarker(results[i],i);
+		  placesResults.push({'name':results[i]['name'],'address':results[i]['formatted_address'],'latlong':results[i]['geometry']['location']})
+		  placesHtml +="<tr><td><img width='15px' src='"+results[i]['icon']+"'></td><td>"+results[i]['name']+"</td><td></td><td><a href='#' onclick='selectPlace("+i+")'>Select</a></td></tr>"
+	    }
+		placesHtml += "</table>"
+		$('#placesResults').html(placesHtml)
+	  }
+	
+
+	}
+	
+	//Step 6: Creater Markers for Places API
+	function createMarker(place,num) {
+	        var placeLoc = place.geometry.location;
+	        var marker = new google.maps.Marker({
+	          map: map,
+	          position: place.geometry.location
+	        });
+			
+			markersArray.push(marker);
+			//Create the InfoWindows
+			var infoWindow = new google.maps.InfoWindow();
+    		infoWindow['PARENT_MARKER'] = marker;
+			
+			google.maps.event.addListener(marker, 'click', function() {
+        		infoWindow.setContent('<b>'+place['name']+'</b><br />'+place['formatted_address']+'<br/><br /><b><a href="#" onclick="selectPlace('+num+')">Pick this location</a></b>');
+        		if (lastOpenInfoWindow) {
+            		lastOpenInfoWindow.close();
+        		}
+        		infoWindow.open(map, marker);
+        		lastOpenInfoWindow = infoWindow;
+        		marker.setAnimation(null); // once the info box is open, stop the bouncing
+    		});
+    google.maps.event.addListener(infoWindow, 'closeclick', function() {
+        lastOpenInfoWindow = null;
+    });
+	      }
+	
+	//Clears markers from Map
+	function clearOverlays() {
+ 		for (var i = 0; i < markersArray.length; i++ ) {
+		    markersArray[i].setMap(null);
+		  }
+		}
+	
+	
+}
+</script>
+
+<script type="text/javascript">
+	//Selects the Place that's clicked on
+	function selectPlace(placeId){
+		address=placesResults[placeId]['address']
+		latlong = String(placesResults[placeId]['latlong']['Xa'])+","+String(placesResults[placeId]['latlong']['Ya'])
+
+		//Center Map
+		map.setCenter(new google.maps.LatLng(placesResults[placeId]['latlong']['Xa'],placesResults[placeId]['latlong']['Ya']));
+		map.setZoom(18);
+		
+		//Update Values with Place Information
+		$('#locationAddress').val(address)
+		$('#latlong').val(latlong)
+		
+		//Clear the crap to get confirmation.
+		$('#createNewLoc').fadeOut()
+		$('.directions').fadeOut()
+		$('.addressConfirm').css('display','block')
+
+		//Close any map popups
+		lastOpenInfoWindow.close();
+	
+	}
+	$("#locationAddress,#locationCity").keyup(function(event){
+    	if(event.keyCode == 13){
+        	$('#searchLocations').click()
+			return false;
+    	}
+	});
+	$('#back1').click(function(){
+		$('#part1').fadeIn()
+		$('#part2').css('display','none')
+	})
+	
+	$('#back2').click(function(){
+		$('#createNewLoc').fadeIn()
+		$('.addressConfirm').css('display','none')
+		//$('#searchLocations').fadeIn()
+		//$('.directions').fadeIn()
+		
+		//$('#locationAddress').removeAttr('readonly');
+		//$('#locationCity').removeAttr('readonly');
+		//$('#back1').fadeIn();
+	})
+
+	$('#searchLocations').click(function(){
+		searchLocations($('#locationAddress').val())
+		
+	})
+	$('#continueToPart2').click(function(){
+		$('#part1').css('display','none')
+		$('#part2').fadeIn()
+		$('#locationAddress').focus()
+	})
+
+	$('#newLoc').click(function(){
+		$('#createNewLoc').toggle()
+	})
+	$(document).ready(function() {
+	$('input.datePicker').Zebra_DatePicker();
+	$('#eventName').focus()
+	})
+</script>
+
+{% endblock content %}

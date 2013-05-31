@@ -1,0 +1,28 @@
+#form {
+    position: relative;
+    width: 800px;
+    border: 1px solid black;
+}
+
+#form .left {
+    float: left;
+    width: 350px;
+    padding: 4px;
+}
+
+#event_map {
+    background-color: black;
+
+    width: 450px;
+    height: 550px;
+    margin: 0;
+
+    border-radius: 5px;
+    overflow:hidden;
+}
+
+#mapWrapper{
+    float:left;
+    margin-left: 10px;
+    margin-top: 10px;
+}

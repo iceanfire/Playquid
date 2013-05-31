@@ -1,0 +1,139 @@
+{% extends "include/homepage/HomeBase.html" %}
+
+{% block pageTitle %}
+	About
+{% endblock pageTitle %}
+
+{% block head %}
+<style type="text/css">
+.left{
+	text-align: left;
+	padding-left: 25px;
+	padding-bottom: 1px;
+}
+
+#container{
+	padding: 25px 0px 25px 0px !important;
+}
+
+.name{
+	font-family: "myriad-pro",sans-serif;
+	font-size: 20px;
+}
+
+.headingGroup{
+	padding: 0px 0px 0px 5px !important;
+	margin: 5px 0px 25px 20px !important;
+	border: none !important;
+}
+
+.testimonial{
+	padding-left:35px !important;
+}
+
+.testimonial .quote{
+	padding: 3px 0px 0px 15px !important;
+}
+
+.role{
+	font-size: 15px;
+	font-style: italic;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+
+.bio{
+	margin-top: 4px;
+	padding-left: 2px;
+	display:block;
+	font-family: verdana;
+	font-size: 16px;
+}
+
+
+</style>
+{% endblock  head%}
+
+
+
+{% block content %}
+		<div class="left">
+			<h1>Meet our Team</h1>
+		</div>
+		
+		<div class="headingGroup">
+			<h2>
+				You already know that at Playquid we're passionate about building social connections between co-workers in large organizations. But here's a bit more about our team & what drives us.
+			</h2>
+		</div>
+		<div class="testimonial">
+			<div class="picture">
+				<img src="/ui/img/intro/about/hadi.jpg">
+				
+			</div>
+			<div class="quote">
+				<span class="name"><b>Hadi Laasi</b><span class="role">Platform Development</span></span><br />
+				<span class="bio">
+				Hadi builds the Playquid platform. He works with Nick & Dr. Fowler to meld enterprise & social science insights into 
+				an <a href="https://www.vitsoe.com/us/about/good-design">elegant</a> solution. He's been designing & building on the 
+				web as far back as he can remember and absolutely loves it. 
+				Hadi has lived the corporate life for most of his career and understands well the challenges that workers face in creating
+				valuable social ties--and is devoted to simplifying those interactions. In his free time, he loves to rock climb, play flag football and listen to music!
+				</span>
+				
+			</div>
+		</div>
+		<br /><br />
+		<div class="testimonial">
+			<div class="picture">
+				<img src="/ui/img/intro/about/nick.jpg">
+				
+			</div>
+			<div class="quote">
+				<span class="name"><b>Nick Foran</b><span class="role">Business Development</span></span><br />
+				<span class="bio">
+				Nick seeks new partnerships for Playquid. He also works to connect
+				Playquid to highly relevant research on employee health and
+				engagement. His roots are in the construction management industry and
+				large team dynamics. This environment taught him that relationships
+				sustain positive corporate culture. He believes a social approach that
+				harnesses the power of technology is necessary to engage people in
+				today's large organizations. He also spent an extended amount of time in South
+				Africa. He counts his African friends and coworkers as  the chief
+				motivator in his work to overcome the challenges of poverty.
+				</span>
+			</div>
+		</div>
+		<br /><br />
+		
+
+		<div class="testimonial">
+			<div class="picture">
+				<img src="/ui/img/intro/about/james.jpg">
+				
+			</div>
+			<div class="quote">
+				<span class="name"><b>James Fowler</b><span class="role">Scientific Advisor</span></span>
+				<span class="bio">
+					Dr. Fowler is a professor of political science and medical genetics at
+					the University of California, San Diego. His work focuses on social
+					network theory and behavioral economics. His research has been
+					featured in the New York Times Magazine's Year in Ideas, Time's Year
+					in Medicine, Discover Magazine's Year in Science, and Harvard Business
+					Review's Breakthrough Business Ideas. Dr. Fowler along with Nicholas
+					Christakis wrote the best-selling book Connected: The
+					Surprising Power of Social Networks and How They Shape Our Lives. He
+					joined the Playquid team to provide research-based direction for our
+					technology products. Dr. Fowler shares our passion for improving the
+					health and well-being of employees. His words on The Colbert
+					Report and other contemporary broadcasts communicate the power of
+					social networks and their ability to create positive change in the
+					world.
+				</span>
+			</div>
+		</div>
+
+
+
+
+{% endblock content %}

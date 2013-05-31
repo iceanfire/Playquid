@@ -1,0 +1,414 @@
+
+#event_map {
+    background-color: black;
+
+    width: 450px;
+    height: 550px;
+    margin: 0;
+
+    border-radius: 5px;
+    overflow:hidden;
+}
+
+#mapWrapper{
+    float:left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+#eventFeed{
+    float:left;
+    width:514px;
+    padding:0px;
+}
+
+#events{
+    padding-top:10px;
+}
+
+#events ul li.month {
+    padding: 5px 5px 5px 4px;
+    width: 500px;
+}
+
+#events ul li.month ul{
+    padding-left:4px;
+}
+
+li.event {
+    margin-bottom:10px;
+}
+
+.event {
+    clear: both;
+}
+
+#events h3 {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom:14px;
+}
+
+
+.event .counts {
+    margin:0px 4px 4px 0px;
+    padding:0px 4px 2px 0px;
+    font-size:10px;
+    cursor:pointer;
+    color: #3D3D3D;
+    margin-right:8px;
+}
+
+.eventTimeWrapper h5{
+    cursor:pointer;
+    width:420px;
+    padding:3px 4px 3px 0px;
+}
+
+h5 img{
+    background-color: #8EC300;
+    border-bottom-left-radius:5px;
+    border-top-left-radius: 5px;
+}
+
+.eventTimeWrapper #titleText{
+    vertical-align: 8px;
+    background-color: #F9FDEB;
+    padding: 4px 10px 5px 6px;
+    color: #3C5C25;
+    margin-left: -4px;
+    line-height:23px;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    font-size: 14px;
+
+}
+
+.eventTimeWrapper .eventDay{
+    font-weight: bold;
+    font-size: 25px;
+    color: #3C5C25;
+    float:left;
+    background-color: #EDF7DD;
+    padding: 12px 10px 12px 10px;
+    margin-right: 10px;
+    width: 35px;
+    text-align:center;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+
+}
+
+.eventTimeWrapper .eventTime{
+    float:left;
+    color: black;
+    font-size:10px;
+    text-align:center;
+    width: 49px;
+    padding:3px;
+    background-color: #D5ECAE;
+    clear:both;
+    border-bottom-right-radius: 1px;
+    border-bottom-left-radius: 1px;
+}
+
+.event .address{
+    color:#4F4F4F;
+    font-size:11px;
+    padding-bottom: 4px;
+    padding-left:68px;
+    font-weight:normal;
+    margin-bottom:0px;
+    display:none;
+}
+
+.event .requiredCheckins {
+    font-size: 10px;
+    font-weight: normal;
+    padding: 5px 8px 6px 4px;
+    margin-left: 61px;
+    margin-top: 3px;
+    width: 270px;
+}
+
+.event .activated{
+    background-color: #F5FFD6 !important;
+    font-weight: bold !important;
+}
+
+
+
+.event button {
+    background-color: #81B130;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #75A22B;
+    font-size: 12px;
+    padding: 5px 4px 5px 4px;
+    margin-top: 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    width:74px;
+}
+
+.event button:hover {
+    border-color: #0E9641;
+    cursor:pointer;
+}
+
+.event .checkOut{
+    width: 117px !important;
+
+}
+
+.event .checkOut img{
+    margin-top: 2px;
+    opacity:.5;
+    cursor: pointer;
+}
+
+.event .checkOut img:hover{
+    opacity: 1;
+}
+
+.signedup .checkOut button {
+    /*background-color: #97322A;*/
+    background-color: #49AA14;
+    margin-top: 0 !important;
+    opacity: 1;
+    color: #FFDDDD;
+    width: 117px !important;
+    border-color: #34940F;
+    color: white;
+}
+
+.signedup .checkOut button:hover{
+  background-color:#97322A;
+  border-color: #97322A;
+}
+
+.notsignedup .checkOut button{
+    width: 100px !important;
+}
+
+.checkOut img {
+    display: none;
+}
+
+
+.description {
+    padding-bottom: 10px;
+}
+
+/*Stylesheets for the feedback box */
+
+#feedback{
+    background-color: #EDF8E1;
+    padding: 10px 0px 10px 0px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin:auto;
+    width: 420px;
+    display:none;
+}
+
+#feedback .eventDay{
+    padding: 2px 10px 2px 10px;
+    background-color: transparent;
+    
+}
+
+#feedback .eventTimeWrapper{
+    background-color: #EDF8E1;
+    width: 366px;
+    margin: 0px auto 5px auto;
+    padding: 8px 5px 6px 5px;
+}
+
+
+#feedback h5{
+    margin-left: 22px;
+    margin-bottom: 0px
+}
+
+#feedback .eventTimeWrapper h5{
+    padding-top: 8px;
+}
+
+#feedback .feedbackButtons{
+    margin:10px 0px 4px 22px;
+    width: 335px;
+}
+
+#feedback .thanks{
+    font-family: georgia, serif;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 2px 8px 2px 8px;
+    text-align: center;
+    line-height: 1.2em;
+    color: #5A703B;
+    display:none;
+
+
+}
+
+#feedback button{
+    background-color: #81B130;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #75A22B;
+    font-size: 12px;
+    padding: 5px 4px 5px 4px;
+
+    margin-top: 2px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+
+
+/*Stylesheets for the feedback box */
+
+
+/* Stylesheets for the More Information box when an event is clicked */
+
+#commentCorner{
+    position: absolute;
+    margin-top: -28px;
+    padding-left: 10px;
+}
+
+.moreInfo{
+    background-color:#EDF8E1;
+    padding: 10px 10px 5px 8px;
+    width: 470px;
+    margin-left: 5px;
+    margin-top: 20px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+.moreInfo .whoSignedUp{
+    font-family:Helvetica, Verdana, Arial, sans-serif;
+    font-weight:bold;
+    font-size:13px;
+    padding-bottom:2px
+}
+
+.moreInfo .whoSignedUp .signedUpList{
+    font-family:verdana,sans-serif;
+    font-size:13px;
+    font-weight:normal;
+    padding-bottom:14px;
+    padding-top:5px;
+    padding-left:8px;
+}
+
+ul.commentsList{
+    font-family:Helvetica, Verdana, Arial, sans-serif;
+    font-weight:bold;
+    font-size:13px;
+    padding-bottom:2px;
+    padding-left:0px !important;
+}
+
+ul.commentsList li{
+    font-family: Verdana, Arial, sans-serif;
+    font-size:13px;
+    margin-bottom:4px !important;
+    padding: 5px;
+    margin-top:5px;
+    margin-left:4px;
+
+}
+
+.name{
+    font-weight:bold;
+    font-size:12px;
+}
+
+.comment{
+    font-weight:normal;
+    padding-left:3px;
+    font-size:11px;
+}
+
+.newComment{
+    height: 22px;
+    width: 410px;
+    margin-left: 9px;
+    font-size:12px;
+    margin-top:8px;
+}
+
+.commentMessage{
+    font-family:verdana;
+    font-size:9px;
+    font-weight:normal;
+    margin-left:12px;
+}
+
+
+/* END Stylesheets for the More Information box when an event is clicked END */
+
+/*stylesheets for fixed headers and map */
+
+.fixedTitle{
+    position: fixed;
+    top: 0px;
+    height: 30px;
+    padding-top: 0px;
+    opacity:.9;
+    font-size: 14px;
+    padding: 0 0 2px 8px;
+}
+.fixedMap{
+    position:fixed !important;
+    top:35px;
+
+}
+
+.fixedFeed{
+    margin-top: 45px;
+}
+
+/*END stylesheets for fixed headers and map*/
+
+
+/*Stylesheets for Map box */
+
+#infoWindowWrapper{
+    overflow:hidden;
+    width: 90%;
+    height: 90%;
+
+}
+
+#mapTitle{
+
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    margin-top: 0px;
+    padding-top: 0px;
+    color: #004910;
+
+
+}
+
+#mapAddress{
+    font-size:12px;
+    font-weight:normal;
+    padding-top: 5px;
+    color:gray;
+    font-style:italic;
+
+
+}
+
+
+/*END Stylesheets for map */

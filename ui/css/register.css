@@ -1,0 +1,135 @@
+#content{
+    background-color:#F4FEEF;
+}
+
+/*Form fields css */
+
+
+form div{
+    padding:5px 4px 5px 15px;
+}
+
+form div label{
+    padding-right: 5px;
+    width: 75px;
+    float:left;
+    font-size:11px;
+    line-height: 30px;
+    clear:both;
+}
+
+form div input,textarea{
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3px;
+}
+
+#userContent{
+    background-color:#F4FEEF !important;
+}
+
+
+/*---end form fields css---*/
+
+
+
+
+
+.signupInput{
+    margin-left: 5px;
+    display:block;
+}
+
+
+
+
+ul.sports {
+    overflow: auto;
+    margin-left:15px;
+}
+ul.sports li p {
+    background-color: black;
+    color: white;
+    padding: 1px 3px 4px 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+ul.sports li p span {
+    color: yellow;
+    padding-left: 5px;
+    font-size: 10px;
+}
+ul.sports li {
+    width: 200px;
+    height: 64px;
+    float: left;
+    margin: 5px;
+}
+
+ul.sports ul li {
+    padding: 15px 5px 5px 5px;
+    background-repeat: no-repeat;
+    background-position: 5px 10px;
+    cursor: pointer;
+}
+ul.sports ul {
+    background-color: #555;
+    overflow: auto;
+}
+
+/** Stars **/
+ul.widget-rating li {
+    background-color: #555 !important;
+    float: left;
+    height: 26px !important;
+    width: 28px !important;
+    margin: 0;
+}
+ul.widget-rating li span {
+    display: none;
+}
+
+#timetable td, #timetable th {
+    padding: 1em 2em;
+    background-color: white;
+}
+#timetable td {
+    cursor: pointer;
+    width: 70px; /* needed so that the table size does not change with bold*/
+    text-align: center;
+}
+#timetable th {
+    background-color: #E5F3EA;
+    color: black;
+}
+#timetable .hover, #timetable .selected {
+    background-color: #B8E2B1;
+    font-weight: bold;
+}
+
+
+#registerButton{
+    background-color: #6FA803;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #75A22B;
+    font-size: 17px;
+    padding: 5px 4px 5px 4px;
+
+    margin-top: 2px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    width:300px;
+}
+
+#registerButton:hover{
+    background-color: #4F9420;
+}
+
+
+#workemail{
+    width: 200px;
+}

@@ -1,0 +1,259 @@
+body {
+    font-family: Verdana, sans-serif;
+	background-image: url("../img/newBack.png");
+    width: 976px;
+    margin: auto;
+    position: static;
+    background-repeat:repeat-x;
+    background-color:#FFFFFF;
+
+}
+
+
+#Introheader{
+    padding-left: 384px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin: 0px auto 0px auto;
+}
+
+#Introheader .logo img{
+    display:block;
+    margin: 10px 0px 0px 0px;
+
+    padding-top: 20px;
+
+}
+
+
+#statement{
+    margin:0px auto 0px auto;
+    width: 976px;
+    text-align:center;
+
+}
+
+h2{
+    padding-top:30px;
+    font-size:41px;
+    font-family:"minion-pro-1","minion-pro-2", "Times New Roman", Georgia, serif;
+    font-weight:normal;
+    margin: 0 auto 0 auto;
+
+}
+h2.error {
+    font-size: 15px;
+}
+
+
+h5{
+    font-size:19px;
+    font-family:"lucida grande","verdana", san-serif;
+    color:black;
+    font-weight:normal;
+    margin: 10px auto 30px auto;
+    line-height:28px;
+
+}
+
+h4{
+    font-size:24px;
+    font-family:"lucida grande","verdana", san-serif;
+    color:black;
+    font-weight:normal;
+    margin: 10px auto 30px auto;
+    line-height:33px;
+    width: 842px !important;
+
+
+}
+
+.features{
+    width: 825px;
+    margin: 10px auto 0px auto;
+    display:none;
+}
+
+.features .box{
+    width: 185px;
+    height: 145px;
+    background-color:black;
+    float:left;
+    margin:20px 15px 20px 0px;
+    border: 3px solid #F0F8E0;
+}
+
+.caption{
+    font-size:13px;
+    font-family:"helvetica","myriad-pro-1","myriad-pro-2", "Hevetica Neue", Arial, sans-serif;
+    padding-top: 6px;
+    font-weight: normal;
+    font-style:italic;
+}
+
+
+#PqWhat{
+    text-align: left;
+    font-family: helvetica, verdana, san-serif;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#PqWhat li{
+    margin-bottom: 20px;
+    margin-top: 5px;
+    line-height: 18px;
+    color: #666;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+#PqWhat strong{
+    color:#7DAB00;
+    font-weight:bold;
+    padding-right: 10px;
+    font-size: 18px;
+
+
+}
+
+
+
+#signupBox{
+    clear:both;
+    overflow: hidden;
+	background-color:white;
+	margin-top: 10px;
+    padding: 0px 1px 1px 1px;
+	border: 0px solid #5A8C39;
+        
+    font-size: 20px;
+    text-align:center;
+
+    -webkit-border-radius:4px;
+	-moz-border-radius: 4px;
+
+
+}
+
+#signupBox input.email{
+    height: 30px;
+    width: 370px;
+    padding: 7px 0 7px 9px;
+    margin-right: 4px;
+    font-size: 24px;
+    vertical-align:middle;
+}
+
+#signupBox input.submit{
+    background-color: #6FA803;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    font-size: 20px;
+    font-family: helvetica;
+    padding: 12px 8px 12px 8px;
+
+}
+
+
+#signupBox input.submit:hover{
+   background-color: #4F9420;
+   cursor:pointer;
+}
+
+.oldFeatures strong{
+    font-weight:bold;
+    font-family:Helvetica, Georgia, Arial;
+}
+
+.oldFeatures{
+    display:none;
+    font-family:Georgia,Times New Roman, Arial;
+    width:967px;
+    margin-top:40px;
+}
+
+.oldFeatures tr td{
+    padding:20px;
+    width: 270px;
+}
+
+
+.login{
+    margin-top:-8px;
+    right: 40px;
+    float:right;
+
+
+}
+
+.login button {
+    background-color: #2EA60B;
+    color:white;
+    font-weight:bold;
+    border: 2px solid #A0D051;
+    border-style: none;
+    font-size: 13px;
+    font-family:helvetica; 
+    padding: 12px 10px 8px 10px;
+opacity: .8;
+}
+
+.submitLogin{
+    background-color: #2EA60B;
+    color:white;
+    font-weight:bold;
+    border: 2px solid #A0D051;
+    border-style: none;
+    font-size: 13px;
+    font-family:helvetica;
+    padding: 8px 10px 8px 10px;
+    opacity:.8;
+    cursor:pointer;
+}
+
+.submitLogin:hover{
+    opacity: 1;
+}
+
+.login button:hover {
+    border-color: #0E9641;
+    cursor:pointer;
+    opacity: 1;
+}
+
+#loginBox {
+    margin-top:-5px;
+    display:none;
+}
+
+
+
+#loginBox{
+	float:right;
+	padding:8px 14px 6px 8px;
+
+	font-size: 11px;
+	font-weight:bold;
+
+
+    -webkit-border-radius:14px;
+	-moz-border-radius: 14px;
+}
+
+#loginBox .email,.password{
+	height: 15px;
+	width: 100px;
+}
+
+
+#loginBox .nosignup {
+    width: 250px;
+    height: 20px;
+    text-align: center;
+    font-size: 13px;
+}

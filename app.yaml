@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+application: playquid2
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: jinja2
+  version: latest
+- name: markupsafe
+  version: latest
+- name: webapp2
+  version: latest
+
+handlers:
+- url: /ui/css/
+  static_dir: ui/css
+  
+- url: /ui/img/
+  static_dir: ui/img
+
+- url: /ui/js/
+  static_dir: ui/js
+
+- url: /admin/.*
+  script: admin.app
+  login: admin
+  
+- url: /ajax/.*
+  script: ajax.app
+
+- url: /update/.*
+  script: update.app
+
+- url: /.*
+  script: main.app
+  
